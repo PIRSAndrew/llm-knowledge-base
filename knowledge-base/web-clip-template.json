@@ -1,0 +1,18 @@
+{
+  "schemaVersion": "0.1.0",
+  "name": "KB Web Clip",
+  "behavior": "create",
+  "noteContentFormat": "{{content}}",
+  "properties": [
+    { "name": "title", "value": "{{title}}", "type": "text" },
+    { "name": "url", "value": "{{url}}", "type": "text" },
+    { "name": "domain", "value": "{{domain}}", "type": "text" },
+    { "name": "author", "value": "{{author}}", "type": "text" },
+    { "name": "published", "value": "{{published}}", "type": "text" },
+    { "name": "clipped", "value": "{{date}}", "type": "text" },
+    { "name": "tags", "value": "", "type": "multitext" },
+    { "name": "routed", "value": "", "type": "text" }
+  ],
+  "noteNameFormat": "{{date}} {{title}}",
+  "path": "raw/web"
+}

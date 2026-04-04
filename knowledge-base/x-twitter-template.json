@@ -1,0 +1,18 @@
+{
+  "schemaVersion": "0.1.0",
+  "name": "KB X Post",
+  "behavior": "create",
+  "noteContentFormat": "## Tweet\n\n{{selectorHtml:article[data-testid='tweet'] div[data-testid='tweetText']}}\n\n**Author:** {{selectorHtml:article[data-testid='tweet'] a[role='link'] span:first-child}} ({{selectorHtml:article[data-testid='tweet'] a[role='link'][href*='/'] div[dir='ltr']}})\n\n{{#if (selectorHtml:article[data-testid='tweet'] img[src*='media'])}}### Media\n{{selectorHtml:article[data-testid='tweet'] img[src*='media']}}{{/if}}\n\n---\n\n## Full Thread\n\n{{content}}",
+  "properties": [
+    { "name": "title", "value": "{{title}}", "type": "text" },
+    { "name": "url", "value": "{{url}}", "type": "text" },
+    { "name": "domain", "value": "x.com", "type": "text" },
+    { "name": "author", "value": "{{author}}", "type": "text" },
+    { "name": "clipped", "value": "{{date}}", "type": "text" },
+    { "name": "tags", "value": "", "type": "multitext" },
+    { "name": "routed", "value": "", "type": "text" }
+  ],
+  "triggers": ["x.com/*/status/*"],
+  "noteNameFormat": "{{date}} {{title}}",
+  "path": "raw/web"
+}
