@@ -37,7 +37,26 @@ Read `_index.md` and verify:
 - Every wiki article file has a corresponding entry in the index
 - Every index entry points to a file that exists
 
-### 7. Skill-Wiki Drift
+### 7. Frontmatter Integrity
+Check every wiki article for valid YAML frontmatter:
+- Must have `title`, `tags`, `created`, `updated` fields
+- `tags` must be an array with at least one tag
+- `updated` date should not be older than the most recent Key Decisions Log entry
+- Flag articles missing frontmatter or with incomplete fields
+
+### 8. Log Freshness
+Read `knowledge-base/log.md`:
+- Check the most recent entry date
+- Flag if no entries in 7+ days (suggests ingests/updates aren't being logged)
+- Check for entries with malformed date prefixes
+
+### 9. Outputs Health
+Check `knowledge-base/outputs/`:
+- List any filed outputs and verify they have frontmatter (title, tags, created, query)
+- Check that filed outputs cross-link to wiki articles via backlinks
+- Flag outputs that could be promoted to wiki articles (if they're frequently referenced)
+
+### 10. Skill-Wiki Drift
 For each pair in the Skill-Wiki Mapping table:
 - Check if the skill file was modified more recently than the wiki article (or vice versa)
 - Flag pairs where one side may be out of date

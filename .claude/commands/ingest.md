@@ -80,12 +80,23 @@ For each relevant wiki article:
 6. Maintain existing `[[backlinks]]` and add new ones if the content connects to other articles
 
 If creating a new article:
+- Add YAML frontmatter: `title`, `tags` (from consistent vocabulary), `created` (today), `updated` (today)
 - Follow the existing article structure (Overview, sections, Related links, Key Decisions Log)
 - Save under the appropriate `wiki/` subdirectory
 - Add entry to `knowledge-base/_index.md`
 - Add entry to the routing table in `.claude/rules/knowledge-base.md`
 
-## Step 5: Report
+When updating an existing article, bump its `updated` date in the YAML frontmatter to today.
+
+## Step 5: Append to Log
+
+Append an entry to `knowledge-base/log.md` with today's date:
+```
+## [YYYY-MM-DD] ingest | {Source description}
+{1-2 sentence summary of what was ingested and which articles were updated.}
+```
+
+## Step 6: Report
 
 After ingestion, report:
 - **Source**: What was ingested (channel, file, URL)

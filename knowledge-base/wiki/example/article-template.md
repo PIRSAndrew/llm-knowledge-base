@@ -1,3 +1,12 @@
+---
+title: "Article Title"
+tags:
+  - domain-tag
+  - topic-tag
+created: YYYY-MM-DD
+updated: YYYY-MM-DD
+---
+
 # Article Title
 
 ## Overview

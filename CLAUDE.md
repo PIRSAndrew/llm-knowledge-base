@@ -9,7 +9,10 @@ Self-maintaining knowledge base powered by Claude Code. The LLM reads before ans
 - When you learn something new during a session, update the relevant wiki article and add a Key Decisions Log entry
 - Raw sources in `raw/` are append-only -- never modify after creation
 - Use `[[backlinks]]` between related wiki articles
+- All wiki articles must have YAML frontmatter (title, tags, created, updated)
+- Log every ingest, update, and lint pass to `knowledge-base/log.md`
+- File substantive multi-article syntheses to `knowledge-base/outputs/`
 
 ## Commands
 - `/ingest` -- Ingest content from Slack, email, files, or web clips into the knowledge base
-- `/kb-lint` -- Run health checks on the knowledge base (broken links, stale content, inconsistencies)
+- `/kb-lint` -- Run health checks on the knowledge base (broken links, stale content, inconsistencies, frontmatter, log freshness)

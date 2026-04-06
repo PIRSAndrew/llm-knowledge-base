@@ -55,7 +55,7 @@ Update the knowledge base path in these files to match your setup:
 
 ### 4. Write your first articles
 
-Create 3-5 wiki articles on topics you discuss most often. Use the template at `knowledge-base/wiki/example/article-template.md`. Then add them to:
+Create 3-5 wiki articles on topics you discuss most often. Use the template at `knowledge-base/wiki/example/article-template.md` (includes YAML frontmatter for Obsidian Dataview). Then add them to:
 
 - The routing table in `.claude/rules/knowledge-base.md`
 - The index at `knowledge-base/_index.md`
@@ -82,6 +82,7 @@ Create 3-5 wiki articles on topics you discuss most often. Use the template at `
 ├── CLAUDE.md                              # Project instructions for Claude Code
 ├── knowledge-base/
 │   ├── _index.md                          # Master index of all wiki articles
+│   ├── log.md                             # Activity log (ingests, updates, lint)
 │   ├── wiki/
 │   │   ├── example/
 │   │   │   └── article-template.md        # Copy this to create new articles
@@ -90,8 +91,9 @@ Create 3-5 wiki articles on topics you discuss most often. Use the template at `
 │   ├── raw/
 │   │   ├── slack/                         # Slack channel exports
 │   │   ├── emails/                        # Email digests
-│   │   ├── meetings/                      # Meeting transcripts
+│   │   ├── meetings/                      # Zoom/Teams transcripts
 │   │   └── web/                           # Obsidian Web Clipper output
+│   ├── outputs/                           # Filed answers (multi-article syntheses)
 │   ├── web-clip-template.json             # Obsidian Web Clipper template
 │   └── x-twitter-template.json            # X/Twitter post clipper template
 ├── .claude/
@@ -150,12 +152,36 @@ After completing this task, check if this run revealed new institutional knowled
 **If nothing new was learned**, skip this step silently.
 ```
 
+## Meeting Transcripts
+
+Drop Zoom or Teams transcripts into `knowledge-base/raw/meetings/`. Then ingest:
+
+```
+/ingest knowledge-base/raw/meetings/your-transcript.md
+```
+
+The LLM will extract decisions and route them to the relevant wiki articles.
+
+## Activity Log
+
+Every ingest, update, and lint pass is logged to `knowledge-base/log.md`. This gives you an audit trail of what changed and when. The log is append-only -- grep it with:
+
+```bash
+grep "^## \[" knowledge-base/log.md | tail -10
+```
+
+## Filed Outputs
+
+When a query produces a reusable synthesis (comparison, analysis, decision framework), it gets filed to `knowledge-base/outputs/` with frontmatter and backlinks. Think of this as the knowledge base answering questions that are worth keeping.
+
 ## Design Decisions
 
 | Decision | Why |
 |----------|-----|
 | **Routing table** | Direct keyword-to-file mapping eliminates guesswork, reduces token waste. The most important piece of the system. |
 | **raw/ is append-only** | Audit trail. Trace any wiki error back to its source. |
+| **YAML frontmatter** | Enables Obsidian Dataview queries, ensures every article has tags and timestamps. |
+| **log.md** | Without it, you lose track of what was ingested and when. Catches gaps in maintenance. |
 | **KB Feedback blocks** | Without them, operational learning stays trapped in one session. This makes the system compound over time. |
 | **Obsidian** | Free, local-first, `[[wikilinks]]` + graph view native. No sync, no vendor lock-in, no API costs. |
 | **Split at ~200 lines** | Keep articles focused. Two distinct topics = two files. |

@@ -56,9 +56,43 @@ Skills (`.claude/skills/`) contain execution instructions. Wiki articles contain
 <!-- Add one row per skill that has a corresponding wiki article. -->
 <!-- HIGH = updated frequently, MEDIUM = updated occasionally, LOW = rarely changes -->
 
+## Logging Behavior (active -- do this automatically)
+After every ingest, significant wiki update, lint pass, or filed output, append an entry to `knowledge-base/log.md`:
+- Format: `## [YYYY-MM-DD] action | Subject` followed by a 1-2 sentence description
+- Actions: `ingest`, `query-filed`, `lint`, `maintenance`, `update`
+- Keep entries concise and parseable -- one entry per operation
+- The log is append-only -- never rewrite or reorder existing entries
+
+## Answer Filing (active -- do this when appropriate)
+When a query produces a substantive synthesis worth preserving (comparisons, analyses, decision frameworks, multi-article answers):
+1. Write the answer as a markdown file in `knowledge-base/outputs/` with YAML frontmatter (title, tags, created, query)
+2. Cross-link to relevant wiki articles using `[[backlinks]]`
+3. Append an entry to `log.md` with action `query-filed`
+4. If the output is significant enough, consider promoting it to a wiki article under `wiki/`
+
+Not every answer needs filing -- only those that synthesize multiple sources or produce reusable knowledge. Quick lookups and single-article answers stay in chat.
+
+## Frontmatter Conventions
+All wiki articles use YAML frontmatter for Obsidian Dataview compatibility:
+```yaml
+---
+title: "Article Title"
+tags:
+  - domain-tag
+  - topic-tag
+created: YYYY-MM-DD
+updated: YYYY-MM-DD
+---
+```
+- Update the `updated` field whenever the article is modified
+- Tags should be lowercase, hyphenated, and drawn from a consistent vocabulary
+- New articles must include frontmatter from creation
+
 ## Linting (periodic, when asked or when it makes sense)
 - Check for inconsistencies across articles (e.g., contradictory decisions)
 - Flag decisions that are marked pending/unresolved
 - Suggest new articles for topics referenced but not yet documented
 - Verify backlinks resolve to actual files
 - Check skill-wiki pairs for drift (skill updated more recently than wiki, or vice versa)
+- Verify all wiki articles have valid YAML frontmatter
+- Check log.md for recent activity -- flag if no entries in 7+ days
