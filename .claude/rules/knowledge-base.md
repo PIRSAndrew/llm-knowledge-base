@@ -10,7 +10,8 @@ Before answering domain questions, read the relevant wiki article(s). Match the 
 | Topic | Primary Article | Supporting Articles |
 |-------|----------------|-------------------|
 | **Example topic** | `wiki/example/article-template.md` | (none) |
-| **Karpathy repos / GitHub monitoring / nanochat / autoresearch / llm-council** | `wiki/people/karpathy.md` | (none) |
+| **Karpathy repos / GitHub monitoring / nanochat / autoresearch / llm-council** | `wiki/people/karpathy.md` | `wiki/codebases/llm-council.md` |
+| **llm-council codebase / council.py / OpenRouter / multi-model / peer review** | `wiki/codebases/llm-council.md` | `wiki/people/karpathy.md` |
 <!-- Add one row per topic. Be specific with keywords so the LLM matches accurately. -->
 <!-- Include catch-all rows for ambiguous terms that could match multiple articles. -->
 
@@ -57,7 +58,8 @@ Skills (`.claude/skills/`) contain execution instructions. Wiki articles contain
 | `ingest` | `.claude/programs/ingest.md` | (none yet) | MEDIUM |
 | `kb-lint` | `.claude/programs/kb-lint.md` | (none yet) | LOW |
 | `ingest-codebase` | `.claude/programs/ingest-codebase.md` | `wiki/codebases/{repo}.md` per run | MEDIUM |
-| `skill-improve` | (self-referential — reads target skill's program) | (none) | LOW |
+| `skill-postrun` | (self-referential — reads target skill's program) | (none) | LOW |
+| `llm-council` | `.claude/programs/llm-council.md` | `wiki/codebases/llm-council.md` | MEDIUM |
 <!-- HIGH = updated frequently, MEDIUM = updated occasionally, LOW = rarely changes -->
 
 ## Logging Behavior (active -- do this automatically)

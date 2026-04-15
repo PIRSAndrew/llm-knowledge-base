@@ -89,7 +89,8 @@ When running the weekly GitHub digest, check these for Karpathy:
 - Stage 1: All council members answer independently
 - Stage 2: Each member reviews others' answers (identities anonymized to prevent bias), ranks by accuracy/insight
 - Stage 3: A designated "Chairman" model synthesizes into a final authoritative answer
-- Uses OpenRouter API + FastAPI backend + React frontend
+- Karpathy's version: OpenRouter API + FastAPI backend + React frontend
+- Our implementation: `PIRSAndrew/llm-council` — single-script CLI adapted for Claude Code skill invocation; see [[llm-council|llm-council codebase article]]
 
 ## Related
 - [[article-template|KB Article Template]]

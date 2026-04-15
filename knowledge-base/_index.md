@@ -8,6 +8,9 @@
 ### People
 - [[karpathy|Andrej Karpathy]] -- GitHub monitoring, repo assessment, weekly watch list
 
+### Codebases
+- [[llm-council|llm-council]] -- Three-stage LLM council skill (PIRSAndrew/llm-council); parallel → peer review → chairman synthesis
+
 ## Key Contacts
 | Name | Role | Notes |
 |------|------|-------|

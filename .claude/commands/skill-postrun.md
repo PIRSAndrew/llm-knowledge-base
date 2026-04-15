@@ -3,9 +3,9 @@ description: Evaluate a recent skill run and update its program.md with lessons 
 argument-hint: [ingest | kb-lint | ingest-codebase | all]
 ---
 
-# Skill Improve
+# Skill Postrun
 
-You are running the skill improvement loop — Karpathy's autoresearch `program.md` pattern applied to KB skills.
+You are running the post-run capture loop — Karpathy's autoresearch `program.md` pattern applied to KB skills.
 
 The analogy:
 - `.claude/commands/{skill}.md` = `train.py` (execution steps, stable)
@@ -132,7 +132,7 @@ Do NOT apply these changes automatically. Present them for human review.
 ## Step 7: Report
 
 ```
-## Skill Improve Report — {skill} — {YYYY-MM-DD}
+## Skill Postrun Report — {skill} — {YYYY-MM-DD}
 
 **Run quality**: [Good / Mixed / Poor]
 **Issues found**: N
@@ -151,6 +151,6 @@ Do NOT apply these changes automatically. Present them for human review.
 
 Append an entry to `knowledge-base/log.md`:
 ```
-## [{YYYY-MM-DD}] maintenance | skill-improve: {skill}
+## [{YYYY-MM-DD}] maintenance | skill-postrun: {skill}
 Evaluated {skill} run. {N} lessons added to program.md. {N} skill file changes proposed.
 ```
