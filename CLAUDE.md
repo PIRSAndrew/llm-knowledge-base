@@ -15,4 +15,10 @@ Self-maintaining knowledge base powered by Claude Code. The LLM reads before ans
 
 ## Commands
 - `/ingest` -- Ingest content from Slack, email, files, or web clips into the knowledge base
+- `/ingest-codebase` -- Ingest a codebase (local path or GitHub URL) as CXML flat doc + wiki architecture article
 - `/kb-lint` -- Run health checks on the knowledge base (broken links, stale content, inconsistencies, frontmatter, log freshness)
+- `/skill-improve` -- Evaluate a recent skill run and update its program.md with lessons (autoresearch feedback loop)
+
+## Skill Program Files
+Each skill has a companion strategy file in `.claude/programs/` that accumulates lessons from past runs.
+Skills read their program file before executing. Run `/skill-improve` after any skill to close the loop.

@@ -52,9 +52,12 @@ Preserve existing content -- append or modify, don't rewrite from scratch. Maint
 
 Skills (`.claude/skills/`) contain execution instructions. Wiki articles contain institutional knowledge. They must stay in sync. When a skill is updated during a session (new pattern, gotcha, precedent, or workflow change), update the corresponding wiki article's methodology section and add a Key Decisions Log entry. When a new decision lands in the wiki that affects operational procedure, flag it for skill update.
 
-| Skill | Wiki Article | Sync Priority |
-|-------|-------------|---------------|
-<!-- Add one row per skill that has a corresponding wiki article. -->
+| Skill | Program File | Wiki Article | Sync Priority |
+|-------|-------------|--------------|---------------|
+| `ingest` | `.claude/programs/ingest.md` | (none yet) | MEDIUM |
+| `kb-lint` | `.claude/programs/kb-lint.md` | (none yet) | LOW |
+| `ingest-codebase` | `.claude/programs/ingest-codebase.md` | `wiki/codebases/{repo}.md` per run | MEDIUM |
+| `skill-improve` | (self-referential — reads target skill's program) | (none) | LOW |
 <!-- HIGH = updated frequently, MEDIUM = updated occasionally, LOW = rarely changes -->
 
 ## Logging Behavior (active -- do this automatically)

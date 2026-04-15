@@ -7,6 +7,10 @@ description: Run health checks on the knowledge base. Finds inconsistencies, bro
 Run a health check on the knowledge base at:
 `knowledge-base/`
 
+## Step 0: Read Program File
+
+Read `.claude/programs/kb-lint.md` before proceeding. It contains calibration notes, known false-positive patterns, and lessons from past lint runs. Apply those lessons when making severity calls.
+
 ## Checks to Run
 
 ### 1. Cross-Article Consistency

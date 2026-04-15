@@ -8,6 +8,10 @@ argument-hint: [slack-url, file-path, #channel last N days, inbox last N days, o
 You are ingesting new content into the knowledge base at:
 `knowledge-base/`
 
+## Step 0: Read Program File
+
+Read `.claude/programs/ingest.md` before proceeding. It contains lessons from past runs, known edge cases, and heuristics that improve routing and filter accuracy. Apply those lessons throughout this run.
+
 ## Step 1: Detect Source Type and Fetch Content
 
 Parse `$ARGUMENTS` to determine the source:
