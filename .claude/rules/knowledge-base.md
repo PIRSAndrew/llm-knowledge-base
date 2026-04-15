@@ -10,6 +10,7 @@ Before answering domain questions, read the relevant wiki article(s). Match the 
 | Topic | Primary Article | Supporting Articles |
 |-------|----------------|-------------------|
 | **Example topic** | `wiki/example/article-template.md` | (none) |
+| **Karpathy repos / GitHub monitoring / nanochat / autoresearch / llm-council** | `wiki/people/karpathy.md` | (none) |
 <!-- Add one row per topic. Be specific with keywords so the LLM matches accurately. -->
 <!-- Include catch-all rows for ambiguous terms that could match multiple articles. -->
 

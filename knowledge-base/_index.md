@@ -6,7 +6,7 @@
 - [[article-template|Example Article]] -- template showing the standard wiki article structure
 
 ### People
-<!-- - [[person-name|Person Name]] -- role, writing style guide, communication rules -->
+- [[karpathy|Andrej Karpathy]] -- GitHub monitoring, repo assessment, weekly watch list
 
 ## Key Contacts
 | Name | Role | Notes |
