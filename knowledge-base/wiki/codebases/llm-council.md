@@ -99,3 +99,4 @@ python council.py "Question" --kb-file knowledge-base/outputs/council-{slug}.md
 |------|----------|--------|
 | 2026-04-15 | Repo created at PIRSAndrew/llm-council. Implementation adapted from Karpathy's llm-council web app into a single-script CLI optimized for Claude Code skill invocation. | Session review |
 | 2026-04-15 | Applied fixes before push: robust multi-pattern ranking parser, retry backoff, truncation raised to 8000/6000 chars at paragraph boundary, None instead of magic-99 for parse failures, chairman disagreement clause, token tracking, --kb-file flag. | In-session code review |
+| 2026-04-16 | PENDING: When PIRSAndrew/llm-council goes public, re-run `/ingest-codebase` to replace the in-session CXML raw with an actual repo capture of the post-edit council.py. Raw file to update: `raw/codebases/llm-council-2026-04-15.md`. | Session handoff note |
